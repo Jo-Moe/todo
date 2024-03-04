@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de">
     <head>
-        <title>Todo<title>
+        <title>{% block title %}Todo{% endblock title %}</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -23,12 +23,12 @@
             <!-- place navbar here -->
             <div class="container bg-primary text-white shadow">
                 <div class="row">
-                    <div class="display-4 col ">ToDo-Liste</div>
+                    <div class="display-4 col ">{% block Ueber %}ToDo-Liste{% endblock Ueber %}</div>
                     <a
                         name=""
                         id=""
                         target = "_blank"
-                        class="btn btn-outline-dark col m-2 shadow"
+                        class="btn btn-outline-dark col m-2 align-middle shadow"
                         href="/admin/todoapp/eintrag/add/"
                         role="button"
                         >Neu</a
@@ -39,41 +39,22 @@
                         target = "_blank"
                         class="btn btn-outline-dark col m-2 shadow"
                         href="/admin/"
-                        role="button"
-                        >Mößner</a
-                    >
-                    
+                        role="button">
+                        {% block user %}Mößner{% endblock user %}
+                    </a>                    
                 </div>
             </div>
         </header>
         <main>
-            {%   for eintrag in  liste  %}
-            <div class="container">
-                <div class="row border border-primary rounded m-3 shadow">
-                    <div class="col-10  display-6 ">
-                        <input type="checkbox" name="" id="" class="col-2">
-                        {{eintrag.content}}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+            {% block content %}
+            <h1>Hauptseite</h1>
+        	{% endblock content %}
         </main>
-       
-        
         <footer>
             <!-- place footer here -->
             <div class="container bg-primary text-white shadow">
                 <div class="row">
                     <div class="display-6 col ">&copy; Moessnersoft 2024</div>
-                    <a
-                        name=""
-                        id=""
-                        class="btn btn-outline-dark col m-2 shadow"
-                        href="#"
-                        role="button"
-                        >Speichern</a
-                    >                 
-                </div>
             </div>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->

@@ -1,0 +1,20 @@
+{% extends "todoapp/todo_base.html" %}
+
+{% block title %}Todo-Liste{% endblock title %}
+                        
+
+{% block user %}{{user}}{% endblock user %}
+
+{% block content %}
+<div class="container">
+    {% for eintrag in liste %}
+        <div class="row border border-primary rounded m-3 shadow">
+            <div class="col-10 display-6 ">
+                <input type="checkbox" name="" id="" class="col-2 align-middle display-6">
+                {{eintrag.content}}
+            </div>
+        </div>
+    {% endfor %}
+    <a name="" id="" class="btn btn-outline-primary col m-3 shadow d-flex justify-content-center" href="#" role="button">Speichern</a>                 
+</div>
+{% endblock content %}
